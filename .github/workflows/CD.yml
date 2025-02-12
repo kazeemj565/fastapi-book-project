@@ -27,8 +27,11 @@ jobs:
         run: |
           pytest --maxfail=1 --disable-warnings -q
 
-      # - name: Deploy to Server
-      #   env:
-      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-      #   run: |
-      #     bash ./deploy.sh
+      - name: Trigger Render Deployment
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+        run: |
+          curl -X POST "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys" \
+          -H "Accept: application/json" \
+          -H "Authorization: Bearer $RENDER_API_KEY"
