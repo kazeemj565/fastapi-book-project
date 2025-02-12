@@ -27,8 +27,8 @@ jobs:
         run: |
           pytest --maxfail=1 --disable-warnings -q
 
-      - name: Deploy to Server
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: |
-          bash ./deploy.sh
+      # - name: Deploy to Server
+      #   env:
+      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      #   run: |
+      #     bash ./deploy.sh
