@@ -2,7 +2,14 @@
 
 ## Overview
 
-This project is a RESTful API built with FastAPI for managing a book collection. It provides comprehensive CRUD (Create, Read, Update, Delete) operations for books with proper error handling, input validation, and documentation.
+This project is a RESTful API built with FastAPI for managing a book collection. It provides CRUD operations for books with proper error handling, input validation, and auto-generated documentation. The application features include:
+- Comprehensive book management (CRUD operations)
+- Input validation with Pydantic models
+- In-memory database for demonstration purposes
+- Auto-generated API documentation (Swagger UI and ReDoc)
+- CI/CD pipelines using GitHub Actions
+- Automated deployment via Render (with optional Nginx reverse proxy instructions for advanced setups)
+
 
 ## Features
 
@@ -15,27 +22,29 @@ This project is a RESTful API built with FastAPI for managing a book collection.
 
 ## Project Structure
 
-```
 fastapi-book-project/
-├── api/
+├── LICENSE
+├── README.md
+├── api
+│   ├── __init__.py
 │   ├── db/
 │   │   ├── __init__.py
-│   │   └── schemas.py      # Data models and in-memory database
-│   ├── routes/
-│   │   ├── __init__.py
-│   │   └── books.py        # Book route handlers
-│   └── router.py           # API router configuration
+│   │   └── schemas.py
+│   ├── router.py
+│   └── routes/
+│       ├── __init__.py
+│       └── books.py
 ├── core/
 │   ├── __init__.py
-│   └── config.py           # Application settings
-├── tests/
-│   ├── __init__.py
-│   └── test_books.py       # API endpoint tests
-├── main.py                 # Application entry point
-├── requirements.txt        # Project dependencies
-└── README.md
-```
+│   └── config.py
+├── main.py
+├── requirements.txt
+├── run.py
+└── tests/
+    ├── __init__.py
+    └── test_books.py
 
+    
 ## Technologies Used
 
 - Python 3.12
