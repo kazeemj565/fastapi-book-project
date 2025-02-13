@@ -43,7 +43,7 @@ fastapi-book-project/
     ├── __init__.py
     └── test_books.py
 
-Note: The virtual environment directory (e.g., `venv/`) is excluded from version control.
+Note: The virtual environment directory ('.git', `venv/`) is excluded from version control.
 
 
 ## Technologies Used
